@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><mappingRoot xmlns="http://www.ibm.com/2008/ccl/Mapping" domainID="com.ibm.msl.mapping.xml" domainIDExtension="mb" mainMap="true" targetNamespace="default" version="8.0.5.0" xmlns:map="default">
+    <output path="/my-response.xsd"/>
+    <namespaces>
+        <namespace kind="supplement" prefix="out" uri="http://www.ibm.com/iib/msl/json"/>
+    </namespaces>
+    <generation engine="xquery"/>
+    <mappingDeclaration name="getXml_Xml_Mapping">
+        <output path="mb:msg(MyResponse,assembly,XMLNSC,Properties)"/>
+        <assign value="code">
+            <output path="MyResponse/code"/>
+        </assign>
+        <assign value="xml">
+            <output path="MyResponse/message"/>
+        </assign>
+    </mappingDeclaration>
+</mappingRoot>

@@ -1,0 +1,78 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "RestServiceMultipleResponseTypes",
+    "version": "1.0.0",
+    "description": "RestServiceMultipleResponseTypes"
+  },
+  "servers": [
+    {
+      "url": "/restservicemultipleresponsetypes/v1"
+    }
+  ],
+  "paths": {
+    "/json": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MyResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/xml": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/MyResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/csv": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "text/csv": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "MyResponse": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
