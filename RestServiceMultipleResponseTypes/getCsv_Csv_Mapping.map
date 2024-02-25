@@ -12,5 +12,8 @@
         <assign value="field3">
             <output path="csvMessage/record/field3"/>
         </assign>
+        <assign value="text/csv">
+            <output path="Properties/ContentType"/>
+        </assign>
     </mappingDeclaration>
 </mappingRoot>
